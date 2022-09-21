@@ -11,9 +11,9 @@ let input_img_url = null
 const Path = path.join(__dirname, '.', 'Public/views');
 
 
-AWS.config.update({ region: "us-west-2" });
+AWS.config.update({ region: "us-east-1" });
 
-const s3 = new AWS.S3({ params: { Bucket: "inputdetects" } });
+const s3 = new AWS.S3({ params: { Bucket: "inputtarget" } });
 
 const { allitems_target, s3params_target } = require("./s3_target_aws");
 
@@ -73,13 +73,13 @@ app.get("/find", (req,res)=>{
       var params = {
         SourceImage: {
           S3Object: {
-            Bucket: "inputdetects",
+            Bucket: "inputtarget",
             Name: `${input_img}`,
           },
         },
         TargetImage: {
           S3Object: {
-            Bucket: "targetdetects",
+            Bucket: "cfdstarget",
             Name: `${element}`,
           },
         },

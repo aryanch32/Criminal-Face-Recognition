@@ -146,14 +146,14 @@ img {
       } 
      
       var img1 = document.createElement('img');
-      img1.src = `https://inputdetects.s3.us-west-2.amazonaws.com/${response.input_img_url}`
+      img1.src = `https://inputtarget.s3.us-east-1.amazonaws.com/${response.input_img_url}`
       img1.style.width = '100%'
       img1.style.height = '80%'
       document.getElementById('left').appendChild(img1);
       console.log(response)
 
       var img = document.createElement('img');
-      img.src = `https://targetdetects.s3.us-west-2.amazonaws.com/${response.output_img_url}` 
+      img.src = `https://cfdstarget.s3.us-east-1.amazonaws.com/${response.output_img_url}` 
       img.style.width = '100%'
       img.style.height = '80%'
       document.getElementById('right').appendChild(img);

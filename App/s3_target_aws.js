@@ -1,7 +1,7 @@
 const aws = require('aws-sdk');
 
 var s3params_target = {
-  Bucket: "targetdetects",
+  Bucket: "cfdstarget",
 };
 
 const s3 = new aws.S3();
